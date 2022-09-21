@@ -1,0 +1,27 @@
+#root{
+    display: flex;
+    position: relative;
+    width: 428px;
+    height: 926px;
+
+    background: grey;
+
+}
+
+#container{
+    display: flex;
+}
+
+input {
+
+border-radius: 7px;
+color:gainsboro;
+}
+
+img {
+    position: absolute;
+    width: 250px;
+    height: 171.39px;
+    left: 94px;
+    top: 56px;
+}
