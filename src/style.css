@@ -1,27 +1,172 @@
+
 #root{
-    display: flex;
-    position: relative;
+
+  
     width: 428px;
     height: 926px;
-
-    background: grey;
-
-}
-
-#container{
-    display: flex;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap: wrap;
+    background-color: rgb(180, 179, 179);
 }
 
 input {
+    flex-direction:column;
+    justify-content:flex-end;
+    justify-content:space-between;
+    border-radius: 7px;
+    color:gainsboro;
+}
+  
+button {
+    order:-2;
+    display:flex;
+    border-radius: 20px;   
+    padding: 1%;
+    align-items:left;
 
-border-radius: 7px;
-color:gainsboro;
 }
 
-img {
+
+#logo {
     position: absolute;
-    width: 250px;
-    height: 171.39px;
-    left: 94px;
-    top: 56px;
+width: 250px;
+height: 171.39px;
+left: 94px;
+top: 56px;  
+  
+}
+
+#blueLine{
+    position: absolute;
+width: 428px;
+height: 180px;
+left: 1px;
+top: 180px;
+}
+
+#passWordLog{
+    position: absolute;
+width: 351px;
+height: 51px;
+left: 44px;
+top: 504px;
+}
+
+#buttonLogin{
+    position: absolute;
+width: 188px;
+height: 45px;
+left: 120px;
+top: 598px;
+text-align: center;
+
+}
+
+#buttonGoogle{
+    position: absolute;
+width: 351px;
+height: 51px;
+left: 44px;
+top: 699px;
+}
+
+#buttonSignupLogin{
+    position: absolute;
+width: 304px;
+height: 78px;
+left: 69px;
+top: 807px;
+}
+
+#inputEmailLogin{
+    position: absolute;
+width: 351px;
+height: 51px;
+left: 44px;
+top: 410px;
+}
+/* Here start View 2*/
+#logo2{
+position: absolute;
+width: 250px;
+height: 250px;
+left: 95px;
+top: 59px;
+}
+
+#btnCreateAccount{
+    position: absolute;
+    width: 188px;
+    height: 45px;
+    left: 123px;
+    top: 691px;
+}
+
+#btnlogin{
+    position: absolute;
+width: 131px;
+height: 42px;
+left: 145px;
+top: 807px;
+}
+
+#registerusername{
+    position: absolute;
+    width: 351px;
+    height: 53px;
+    left: 41px;
+    top: 472px;
+    
+    background: rgb(253, 250, 250);
+    border-radius: 7px;
+}
+
+#emailinpute{
+    position: absolute;
+    width: 351px;
+    height: 53px;
+    left: 41px;
+    top: 545px;
+    
+    background: rgb(217, 217, 217);
+    border-radius: 7px;
+}
+
+#passwordinput{
+    position: absolute;
+width: 351px;
+height: 53px;
+left: 41px;
+top: 612px;
+
+background: rgb(241, 239, 239);
+border-radius: 7px
+}
+
+/* Here start View 3*/
+#logoHome {
+position: absolute;
+width: 101px;
+height: 67.92px;
+left: 33px;
+top: 67px;    
+}
+
+#userInputPost{
+position: absolute;
+width: 302px;
+height: 87px;
+left: 48px;
+top: 780px;
+}
+
+#btnSend {
+position: absolute;
+width: 26px;
+height: 26px;
+left: 364px;
+top: 810px;
 }
