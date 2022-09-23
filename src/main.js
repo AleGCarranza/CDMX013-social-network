@@ -17,6 +17,7 @@ const firebaseApp = initializeApp({
   messagingSenderId: '864982046786',
   appId: '1:864982046786:web:432b211d42716bb7c475db',
 });
+
 const auth = getAuth(firebaseApp);
 
 onAuthStateChanged(auth, (user) => {
