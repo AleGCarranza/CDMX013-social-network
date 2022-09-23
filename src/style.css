@@ -62,6 +62,8 @@ height: 45px;
 left: 120px;
 top: 598px;
 text-align: center;
+font-size: 20px;
+color: red;
 
 }
 
@@ -79,6 +81,8 @@ width: 304px;
 height: 78px;
 left: 69px;
 top: 807px;
+font-size: 20px;
+color:green ;
 }
 
 #inputEmailLogin{
@@ -87,6 +91,8 @@ width: 351px;
 height: 51px;
 left: 44px;
 top: 410px;
+font-size: 20px;
+color:black;
 }
 /* Here start View 2*/
 #logo2{

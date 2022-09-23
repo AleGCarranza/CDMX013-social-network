@@ -14,6 +14,7 @@ export const Login = () => {
   buttonSignup.setAttribute('id', 'buttonSignupLogin');
   const inputEmail = document.createElement('input');
   inputEmail.setAttribute('id', 'inputEmailLogin');
+  inputEmail.setAttribute('placeholder', 'Email...');
   const inputPass = document.createElement('input');
   inputPass.setAttribute('id', 'passWordLog');
 
