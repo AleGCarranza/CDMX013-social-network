@@ -1,6 +1,5 @@
-import AdvanceStringIndex from 'es-abstract/2015/AdvanceStringIndex.js';
-import { setThePassword } from 'whatwg-url';
 import { onNavigate, createAccount } from '../main.js';
+import { AuthErrorCodes } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js';
 
 export const Register = () => {
   const div = document.createElement('div');
@@ -22,7 +21,7 @@ export const Register = () => {
   buttonBackLogIn.textContent = 'Log In';
   accountButton.addEventListener('click', () => {
     createAccount(inputEmail.value, inputPass.value);
-    // onNavigate('/home');
+    onNavigate('/home');
   });
 
   buttonBackLogIn.addEventListener('click', () => {
@@ -43,6 +42,6 @@ export const showLoginError = (error) => {
   if (error.code == AuthErrorCodes.INVALID_PASSWORD) {
     lblLoginErrorMessage.innerHTML = ' Wrong Password. Try AdvanceStringIndex.';
   } else {
-    lblLoginErrorMessage.innerHTML = 'Error: ${error.message}';
+    lblLoginErrorMessage.innerHTML = `Error: ${error.message}`;
   }
 };
