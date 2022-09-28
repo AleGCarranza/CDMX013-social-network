@@ -17,7 +17,7 @@
 
 #logo {
 position: absolute;
-left: 37px;
+left: 55px;
 width: 320px;
 height: 320px;
 top: -43px;
@@ -27,17 +27,17 @@ z-index: 2;
 
 #blueLine{
 position: absolute;
-width: 387px;
+width: 435px;
 height: 180px;
 left: 1px;
-top: 117px;
+top: 122px;
 }
 
 #inputEmailLogin {
 position: absolute;
 width: 295px;
 height: 51px;
-left: 44px;
+left: 84px;
 top: 335px;
 font-size: 20px;
 color:black;
@@ -46,11 +46,20 @@ border-color: transparent;
 background-color:rgba(217, 217, 217, 0.34);
 }
 
+#pinEmail {
+position: absolute;
+width: 33.43px;
+height: 30px;
+left: 45px;
+top: 347px;
+z-index: 2;    
+}
+
 #passWordLog{
 position: absolute;
 width: 295px;
 height: 51px;
-left: 44px;
+left: 84px;
 top: 420px;
 font-size: 20px;
 color:black;
@@ -59,11 +68,20 @@ border-color: transparent;
 background-color:rgba(217, 217, 217, 0.34);
 }
 
+#pinPassword {
+position: absolute;
+width: 33.43px;
+height: 30px;
+left: 45px;
+top: 430px;
+z-index: 2; 
+
+}
 #buttonLogin{
 position: absolute;
 width: 188px;
 height: 45px;
-left: 100px;
+left: 122px;
 top: 520px;
 text-align: center;
 font-size: 20px;
@@ -80,7 +98,7 @@ border-color: transparent;
 position: absolute;
 width: 295px;
 height: 51px;
-left: 44px;
+left: 70px;
 top: 605px;
 color: rgba(97, 93, 93, 0.71);
 border-radius:20px;
@@ -95,17 +113,17 @@ border-color: transparent;
 position: absolute;
 width: 29px;
 height: 29px;
-left: 51px;
+left: 76px;
 top: 617px;
 z-index: 1;
     
 }
 
-#questionLogin {
+#questionLog {
 position: absolute;
 width: 302px;
 height: 39px;
-left: 48px;
+left: 70px;
 top: 710px;
 font-family: 'Roboto';
 font-weight: 600;
@@ -125,7 +143,7 @@ font-size: 20px;
 color:rgba(9, 106, 217, 1);
 width: 90px;
 height: 39px;
-left: 160px;
+left: 170px;
 top: 775px;
 font-family: 'Roboto';
 font-weight: 700;
@@ -134,7 +152,6 @@ line-height: 25px;
 text-align: center;
 text-decoration-line: underline;
 }
-
 
 
 
@@ -220,3 +237,64 @@ height: 26px;
 left: 364px;
 top: 810px;
 }*/
+
+/* Here start View 3*/
+
+#logoHome {
+    position: absolute;
+    width: 331px;
+    height: 75px;
+    left: 33px;
+    top: 47px;
+    }
+    #userInputPost{
+    position: absolute;
+    width: 302px;
+    height: 87px;
+    left: 22px;
+    top: 712px;
+    background: rgba(62, 138, 162, 0.34);
+    border-radius: 15px;
+    color:black
+    }
+    #btnSend {
+    position: absolute;
+    width: 44px;
+    height: 26px;
+    left: 334px;
+    top: 745px;
+    background-color:rgba(9, 106, 217, 1);
+    font-style: oblique;
+    color:rgb(241, 239, 239)
+    }
+    #userInputEdit{
+    position: absolute;
+    width: 345px;
+    height: 129px;
+    left: 18px;
+    top: 178px;
+    border: transparent;
+    background: rgba(255, 205, 108, 0.34);
+    border-radius: 15px;
+    color:black
+    }
+    #btnUpdate {
+    position: absolute;
+    width: 55.43px;
+    height: 26.57px;
+    left: 109px;
+    top: 276px;
+    background-color:rgba(61, 97, 122, 1);
+    font-style: oblique;
+    color:rgb(241, 239, 239);
+    }
+    #btnCancel {
+    position: absolute;
+    width: 55.43px;
+    height: 26.57px;
+    left: 173.57px;
+    top: 276px;
+    background-color:rgba(61, 97, 122, 1);
+    font-style: oblique;
+    color:rgb(241, 239, 239);
+    }

@@ -8,7 +8,7 @@ import {
 // import  {getFirestore, createusernameandpass } from  'https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js'; // 'firebase/auth';
 
 import { Login } from './components/Login.js';
-import { Register, showLoginError } from './components/Register.js';
+import { Register, showLoginError} from './components/Register.js';  // showLoginError
 import { Home } from './components/Home.js';
 
 const firebaseApp = initializeApp({
@@ -28,12 +28,13 @@ export const loginEmailPassword = async (email, password) => {
   console.log(userCredential.user);
 };
 
-export const createAccount = async (loginEmail, loginPassword) => {
+export const createAccount = async (email, password) => {
   try {
-    const userCredential = await createUserWithEmailAndPassword(auth, loginEmail, loginPassword);
-    console.log(userCredential.user);
+    /*const userCredential =*/ await createUserWithEmailAndPassword(auth, email, password);
+    //console.log(userCredential.user);
+   // const user = userCredential.user;
   } catch (error) {
-    console.log(error);
+    console.log('There was an error: ${error}')
     showLoginError(error);
   }
 };
