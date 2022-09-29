@@ -1,5 +1,4 @@
-
-import { onNavigate, loginEmailPassword } from '../main.js';
+import { onNavigate } from '../main.js';
 
 export const Login = () => {
   const div = document.createElement('div');
@@ -37,7 +36,6 @@ export const Login = () => {
   buttonSignup.textContent = 'Sign Up';
   questionLog.textContent = 'Don´t have an account?';
   buttonLogin.addEventListener('click', () => {
-    loginEmailPassword(inputEmail.value, inputPass.value);
     onNavigate('/home');
   });
 

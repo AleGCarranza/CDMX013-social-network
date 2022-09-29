@@ -1,4 +1,5 @@
 import { onNavigate } from '../main.js';
+
 export const Home = () => {
   const div = document.createElement('div');
   const image = document.createElement('img');
