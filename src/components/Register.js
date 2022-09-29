@@ -1,5 +1,5 @@
-import { onNavigate, createAccount } from '../main.js';
-import { AuthErrorCodes } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js';
+import { onNavigate } from '../main.js';
+import { createAccount } from '../lib/auth.js';
 
 export const Register = () => {
   const div = document.createElement('div');
@@ -20,8 +20,18 @@ export const Register = () => {
   accountButton.textContent = 'Create Account';
   buttonBackLogIn.textContent = 'Log In';
   accountButton.addEventListener('click', () => {
-    createAccount(inputEmail.value, inputPass.value);
-    onNavigate('/home');
+    createAccount(inputEmail.value, inputPass.value).then((userCredential) => {
+      // Signed in
+      const user = userCredential.user;
+      // ...
+      console.log('YA te registraste valedora');
+    })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log('nel valedora');
+      // ..
+      });
   });
 
   buttonBackLogIn.addEventListener('click', () => {
@@ -32,16 +42,4 @@ export const Register = () => {
   //  quitamos inputUserRegister
 
   return div;
-};
-
-const divLoginError = document.querySelector('#divLoginError');
-const lblLoginErrorMessage = document.querySelector('#lblLoginErrorMessage');
-
-export const showLoginError = (error) => {
-  divLoginError.style.display = 'block';
-  if (error.code == AuthErrorCodes.INVALID_PASSWORD) {
-    lblLoginErrorMessage.innerHTML = ' Wrong Password. Try AdvanceStringIndex.';
-  } else {
-    lblLoginErrorMessage.innerHTML = `Error: ${error.message}`;
-  }
 };

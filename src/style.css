@@ -153,9 +153,87 @@ text-align: center;
 text-decoration-line: underline;
 }
 
+/*view 2*/
+/*
+#logo2 {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    left: 95px;
+    top: 59px;
+}
+#btnCreateAccount {
+    position: absolute;
+    width: 188px;
+    height: 45px;
+    left: 123px;
+    top: 691px;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Roboto';
+    font-weight: 800;
+    line-height: 23px;
+    color: rgba(97, 93, 93, 0.71);
+    border-radius: 20px;
+    background-color: rgba(195, 122, 55, 0.41);
+    border-color: transparent;
+}
+#btnlogin {
+    position: absolute;
+    width: 131px;
+    height: 42px;
+    left: 166px;
+    top: 800px;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Roboto';
+    font-weight: 800;
+    line-height: 23px;
+    color: rgba(97, 93, 93, 0.71);
+    border-radius: 20px;
+    background-color: rgba(195, 122, 55, 0.41);
+    border-color: transparent;
+}
+#registerusername {
+    position: absolute;
+    width: 351px;
+    height: 53px;
+    left: 41px;
+    top: 472px;
+    font-size: 20px;
+    color: black;
+    border-radius: 7px;
+    border-color: transparent;
+    background-color: rgba(217, 217, 217, 0.34);
+}
+#emailinpute {
+    position: absolute;
+    width: 351px;
+    height: 53px;
+    left: 41px;
+    top: 545px;
+    font-size: 20px;
+    color: black;
+    border-radius: 7px;
+    border-color: transparent;
+    background-color: rgba(217, 217, 217, 0.34);
+}
+#passwordinput {
+    position: absolute;
+    width: 351px;
+    height: 53px;
+    left: 26px;
+    top: 618px;
+    font-size: 20px;
+    color: black;
+    border-radius: 7px;
+    border-color: transparent;
+    background-color: rgba(217, 217, 217, 0.34);
+}
+*/
 
 
-/* Here start View 2*/
+/* Here start View 2...*/
 /*#logo2{
 position: absolute;
 width: 250px;
