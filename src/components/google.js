@@ -2,10 +2,10 @@ import { GoogleAuthProvider, signInWithPopup, getAuth } from 'https://www.gstati
 
 import { onNavigate } from '../main.js';
 
-export const googleAuth = async () => {
+export const googleAuth = () => {
   const auth = getAuth();
   const provider = new GoogleAuthProvider();
-  await signInWithPopup(auth, provider)
+  signInWithPopup(auth, provider)
     .then((result) => {
       onNavigate('/home');
       console.log('google sign in');
