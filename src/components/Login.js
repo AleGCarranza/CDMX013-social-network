@@ -1,4 +1,9 @@
+import { getAuth } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js';
 import { onNavigate } from '../main.js';
+import { app } from '../lib/config.js';
+import { googleAuth } from './google.js';
+
+export const auth = getAuth(app);
 
 export const Login = () => {
   const div = document.createElement('div');
@@ -43,9 +48,10 @@ export const Login = () => {
     onNavigate('/register');
   });
 
-  buttonGoogle.addEventListener('click', () => {
-    onNavigate('/home');
-  });
+  buttonGoogle.addEventListener('click', googleAuth);
+  // buttonGoogle.addEventListener('click', () => {
+  // onNavigate('/home');
+  // });
 
   div.append(image, blueLine, inputEmail, pinEmail, inputPass, pinPassword, buttonLogin, giM, buttonGoogle, questionLog, buttonSignup);
   return div;
