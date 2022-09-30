@@ -1,4 +1,6 @@
+import { getAuth, signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js'';
 import { onNavigate } from '../main.js';
+import { googleAuth } from './google.js';
 
 export const Login = () => {
   const div = document.createElement('div');
