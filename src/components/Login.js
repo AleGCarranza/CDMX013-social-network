@@ -2,6 +2,7 @@ import { getAuth } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.
 import { onNavigate } from '../main.js';
 import { app } from '../lib/config.js';
 import { googleAuth } from './google.js';
+import { loginEmailPassword } from '../lib/auth.js';
 
 export const auth = getAuth(app);
 
@@ -27,6 +28,7 @@ export const Login = () => {
   const inputPass = document.createElement('input');
   inputPass.setAttribute('id', 'passWordLog');
   inputPass.setAttribute('placeholder', 'Password');
+  inputPass.setAttribute('type', 'password');
   const pinPassword = document.createElement('img');
   pinPassword.setAttribute('id', 'pinPassword');
   const questionLog = document.createElement('p');
@@ -42,6 +44,18 @@ export const Login = () => {
   questionLog.textContent = 'Don´t have an account?';
   buttonLogin.addEventListener('click', () => {
     onNavigate('/home');
+    loginEmailPassword(inputEmail.value, inputPass.value).then((userCredential) => {
+      // Signed in
+      const user = userCredential.user;
+      // ...
+      console.log('ya entraste');
+    })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log('no registro');
+      // ..
+      });
   });
 
   buttonSignup.addEventListener('click', () => {
