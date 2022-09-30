@@ -57,14 +57,3 @@ export const Register = () => {
 
   return div;
 };
-
-
-  buttonBackLogIn.addEventListener('click', () => {
-    onNavigate('/');
-  });
-
-  div.append(imageR, inputEmail, inputPass, accountButton, buttonBackLogIn);
-  //  quitamos inputUserRegister
-
-  return div;
-};
