@@ -154,20 +154,78 @@ text-decoration-line: underline;
 }
 
 /*view 2*/
-/*
+/*view 2*/
+
 #logo2 {
     position: absolute;
-    width: 250px;
-    height: 250px;
-    left: 95px;
-    top: 59px;
+    left: 55px;
+    width: 310px;
+    height: 310px;
+    top: 00px;
+    justify-content: center;
+    z-index: 2;
 }
+
+#welcomeview {
+    position: absolute;
+    left: 45px;
+    width: 350px;
+    height: 211px;
+    top: 270px;
+    justify-content: center;
+    z-index: 2;
+}
+
+#emailinputRegister {
+    position: absolute;
+    width: 260px;
+    height: 51px;
+    left: 110px;
+    top: 523px;
+    font-size: 20px;
+    color: black;
+    border-radius: 7px;
+    border-color: transparent;
+    background-color: rgba(217, 217, 217, 0.34);
+}
+
+#pinEmail2 {
+    position: absolute;
+    width: 33px;
+    height: 32px;
+    left: 59px;
+    top: 535px;
+    z-index: 2;
+}
+
+#passwordinputRegister {
+    position: absolute;
+    width: 260px;
+    height: 51px;
+    left: 110px;
+    top: 596px;
+    font-size: 20px;
+    color: black;
+    border-radius: 7px;
+    border-color: transparent;
+    background-color: rgba(217, 217, 217, 0.34);
+}
+
+#pinPassword2 {
+    position: absolute;
+    width: 33px;
+    height: 30px;
+    left: 59px;
+    top: 601px;
+    z-index: 2;
+}
+
 #btnCreateAccount {
     position: absolute;
     width: 188px;
     height: 45px;
-    left: 123px;
-    top: 691px;
+    left: 120px;
+    top: 701px;
     text-align: center;
     font-size: 20px;
     font-family: 'Roboto';
@@ -178,143 +236,40 @@ text-decoration-line: underline;
     background-color: rgba(195, 122, 55, 0.41);
     border-color: transparent;
 }
+
+#questionbacklog {
+    position: absolute;
+    width: 292px;
+    height: 32px;
+    left: 66px;
+    top: 761px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    color: #615959;
+    text-align: center;
+    z-index: 2;
+}
+
 #btnlogin {
     position: absolute;
+    background-color: transparent;
+    border-color: transparent;
+    font-size: 20px;
+    color: rgba(9, 106, 217, 1);
     width: 131px;
     height: 42px;
-    left: 166px;
+    left: 146px;
     top: 800px;
-    text-align: center;
-    font-size: 20px;
     font-family: 'Roboto';
-    font-weight: 800;
-    line-height: 23px;
-    color: rgba(97, 93, 93, 0.71);
-    border-radius: 20px;
-    background-color: rgba(195, 122, 55, 0.41);
-    border-color: transparent;
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 25px;
+    text-align: center;
+    text-decoration-line: underline;
 }
-#registerusername {
-    position: absolute;
-    width: 351px;
-    height: 53px;
-    left: 41px;
-    top: 472px;
-    font-size: 20px;
-    color: black;
-    border-radius: 7px;
-    border-color: transparent;
-    background-color: rgba(217, 217, 217, 0.34);
-}
-#emailinpute {
-    position: absolute;
-    width: 351px;
-    height: 53px;
-    left: 41px;
-    top: 545px;
-    font-size: 20px;
-    color: black;
-    border-radius: 7px;
-    border-color: transparent;
-    background-color: rgba(217, 217, 217, 0.34);
-}
-#passwordinput {
-    position: absolute;
-    width: 351px;
-    height: 53px;
-    left: 26px;
-    top: 618px;
-    font-size: 20px;
-    color: black;
-    border-radius: 7px;
-    border-color: transparent;
-    background-color: rgba(217, 217, 217, 0.34);
-}
-*/
-
-
-/* Here start View 2...*/
-/*#logo2{
-position: absolute;
-width: 250px;
-height: 250px;
-left: 95px;
-top: 59px;
-}
-
-#btnCreateAccount{
-    position: absolute;
-    width: 188px;
-    height: 45px;
-    left: 123px;
-    top: 691px;
-}
-
-#btnlogin {
-    position: absolute;
-width: 131px;
-height: 42px;
-left: 145px;
-top: 807px;
-}
-
-#registerusername{
-    position: absolute;
-    width: 351px;
-    height: 53px;
-    left: 41px;
-    top: 472px;
-    
-    background: rgb(253, 250, 250);
-    border-radius: 7px;
-}
-
-#emailinpute{
-    position: absolute;
-    width: 351px;
-    height: 53px;
-    left: 41px;
-    top: 545px;
-    
-    background: rgb(217, 217, 217);
-    border-radius: 7px;
-}
-
-#passwordinput{
-    position: absolute;
-width: 351px;
-height: 53px;
-left: 41px;
-top: 612px;
-
-background: rgb(241, 239, 239);
-border-radius: 7px
-}
-
-/* Here start View 3*/
-/*#logoHome {
-position: absolute;
-width: 101px;
-height: 67.92px;
-left: 33px;
-top: 67px;    
-}
-
-#userInputPost{
-position: absolute;
-width: 302px;
-height: 87px;
-left: 48px;
-top: 780px;
-}
-
-#btnSend {
-position: absolute;
-width: 26px;
-height: 26px;
-left: 364px;
-top: 810px;
-}*/
 
 /* Here start View 3*/
 
