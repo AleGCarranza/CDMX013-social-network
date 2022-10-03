@@ -2,6 +2,8 @@ import { onNavigate } from '../main.js';
 import { createAccount } from '../lib/auth.js';
 
 export const Register = () => {
+  const errorMessageregister = document.createElement('p');
+  const registerSucces = document.createElement('p');
   const div = document.createElement('div');
   const imageR = document.createElement('img');
   imageR.setAttribute('id', 'logo2');
@@ -24,6 +26,9 @@ export const Register = () => {
   questionBacklog.setAttribute('id', 'questionbacklog');
   const buttonBackLogIn = document.createElement('button');
   buttonBackLogIn.setAttribute('id', 'btnlogin');
+  errorMessageregister.setAttribute('class', 'errormessage');
+  registerSucces.setAttribute('class', 'congrats');
+
   //  const inputUserRegister = document.createElement('input');
   //  inputUserRegister.setAttribute('id', 'registerusername');
   imageR.src = 'img/logo.png';
@@ -37,14 +42,14 @@ export const Register = () => {
     createAccount(inputEmail.value, inputPass.value).then((userCredential) => {
       // Signed in
       const user = userCredential.user;
-      // ...
-      console.log('YA te registraste valedora');
+      registerSucces.innerHTML = 'Congrats, Welcome to Frontier Advisor';
+      // console.log('YA te registraste valedora');
     })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        console.log('nel valedora');
-      // ..
+        errorMessageregister.innerHTML = 'You already have an account .Back to the login';
+        // onsole.log('nel valedora');
       });
   });
 
@@ -52,7 +57,7 @@ export const Register = () => {
     onNavigate('/');
   });
 
-  div.append(imageR, welcomeMessage, inputEmail, pinEmail2, inputPass, pinPassword2,  accountButton, questionBacklog, buttonBackLogIn);
+  div.append(imageR, welcomeMessage, inputEmail, pinEmail2, inputPass, pinPassword2, accountButton, errorMessageregister, registerSucces, questionBacklog, buttonBackLogIn);
   //  quitamos inputUserRegister
 
   return div;

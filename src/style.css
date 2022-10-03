@@ -331,3 +331,11 @@ text-decoration-line: underline;
     font-style: oblique;
     color:rgb(241, 239, 239);
     }
+
+    #userLogOut{
+        position: absolute;
+        width: 72px;
+        height: 21.64px;
+        left: 294px;
+        top: 15px;
+    }
