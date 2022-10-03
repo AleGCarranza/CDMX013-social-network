@@ -1,5 +1,5 @@
 import { onNavigate } from '../main.js';
-
+import { logout } from './logout.js';
 export const Home = () => {
   const div = document.createElement('div');
   const image = document.createElement('img');
@@ -20,9 +20,16 @@ export const Home = () => {
   const inputEdit = document.createElement('input');
   inputEdit.setAttribute('id', 'userInputEdit');
   inputEdit.setAttribute('placeholder', 'You can edit your comment here');
+  const buttonLogOut = document.createElement('button');
+  buttonLogOut.setAttribute('id', 'userLogOut');
+  buttonLogOut.textContent = 'LogOut';
   buttonSend.addEventListener('click', () => {
     onNavigate(console.log());
   });
-  div.append(image, buttonSend, inputPost, inputEdit, buttonUpdate, buttonCancel);
+  buttonLogOut.addEventListener('click', () => {
+    logout();
+    //onNavigate('/');
+  });
+  div.append(image, buttonSend, inputPost, inputEdit, buttonUpdate, buttonCancel, buttonLogOut);
   return div;
 };

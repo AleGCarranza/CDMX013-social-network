@@ -3,10 +3,12 @@ import { onNavigate } from '../main.js';
 import { app } from '../lib/config.js';
 import { googleAuth } from './google.js';
 import { loginEmailPassword } from '../lib/auth.js';
+import { showLoginError } from './AuthError.js';
 
 export const auth = getAuth(app);
 
 export const Login = () => {
+  
   const div = document.createElement('div');
   const image = document.createElement('img');
   image.setAttribute('id', 'logo');
@@ -23,6 +25,7 @@ export const Login = () => {
   const inputEmail = document.createElement('input');
   inputEmail.setAttribute('id', 'inputEmailLogin');
   inputEmail.setAttribute('placeholder', 'Email');
+  //inputEmail.setAttribute('type ', 'email');
   const pinEmail = document.createElement('img');
   pinEmail.setAttribute('id', 'pinEmail');
   const inputPass = document.createElement('input');
@@ -42,19 +45,16 @@ export const Login = () => {
   giM.src = 'img/google.png';
   buttonSignup.textContent = 'Sign Up';
   questionLog.textContent = 'Don´t have an account?';
+  const messageError = document.createElement('p');
+  messageError.setAttribute = ('id', 'messageError');
+
   buttonLogin.addEventListener('click', () => {
-    onNavigate('/home');
     loginEmailPassword(inputEmail.value, inputPass.value).then((userCredential) => {
-      // Signed in
       const user = userCredential.user;
-      // ...
-      console.log('ya entraste');
+      console.log(user);
     })
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log('no registro');
-      // ..
+        showLoginError(error);
       });
   });
 
