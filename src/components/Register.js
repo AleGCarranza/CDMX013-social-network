@@ -2,7 +2,7 @@ import { onNavigate } from '../main.js';
 import { createAccount } from '../lib/auth.js';
 
 export const Register = () => {
-  const errorMessageregister = document.createElement('p');
+  const errorMessageRegister = document.createElement('p');
   const registerSucces = document.createElement('p');
   const div = document.createElement('div');
   const imageR = document.createElement('img');
@@ -11,24 +11,29 @@ export const Register = () => {
   welcomeMessage.setAttribute('id', 'welcomeview');
   const accountButton = document.createElement('button');
   accountButton.setAttribute('id', 'btnCreateAccount');
+  //accountButton.setAttribute('type', 'submit');
   const inputEmail = document.createElement('input');
   inputEmail.setAttribute('id', 'emailinputRegister');
   inputEmail.setAttribute('placeholder', 'Email');
+  inputEmail.setAttribute('type', 'email');
+  inputEmail.setAttribute('required', true);
   const pinEmail2 = document.createElement('img');
   pinEmail2.setAttribute('id', 'pinEmail2');
   const inputPass = document.createElement('input');
   inputPass.setAttribute('id', 'passwordinputRegister');
   inputPass.setAttribute('type', 'password');
   inputPass.setAttribute('placeholder', 'Password');
+  inputPass.setAttribute('required', true);
   const pinPassword2 = document.createElement('img');
   pinPassword2.setAttribute('id', 'pinPassword2');
   const questionBacklog = document.createElement('p');
   questionBacklog.setAttribute('id', 'questionbacklog');
   const buttonBackLogIn = document.createElement('button');
   buttonBackLogIn.setAttribute('id', 'btnlogin');
-  errorMessageregister.setAttribute('class', 'errormessage');
+  errorMessageRegister.setAttribute('class', 'errormessage');
   registerSucces.setAttribute('class', 'congrats');
-
+  const form = document.createElement('form');
+  form.append(inputEmail, inputPass, accountButton);
   //  const inputUserRegister = document.createElement('input');
   //  inputUserRegister.setAttribute('id', 'registerusername');
   imageR.src = 'img/logo.png';
@@ -43,22 +48,25 @@ export const Register = () => {
       // Signed in
       const user = userCredential.user;
       registerSucces.innerHTML = 'Congrats, Welcome to Frontier Advisor';
-      // console.log('YA te registraste valedora');
+      console.log('Ya te registraste');
+     /*let temporizador= setTimeout(() => {
+      console.log('this is working'); 
+    },
+      5000);*/
     })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        errorMessageregister.innerHTML = 'You already have an account .Back to the login';
-        // onsole.log('nel valedora');
+        console.log(errorMessage);
+       // errorMessageRegister.innerHTML = 'You already have an account .Back to the login';
       });
   });
 
   buttonBackLogIn.addEventListener('click', () => {
     onNavigate('/');
   });
-
-  div.append(imageR, welcomeMessage, inputEmail, pinEmail2, inputPass, pinPassword2, accountButton, errorMessageregister, registerSucces, questionBacklog, buttonBackLogIn);
-  //  quitamos inputUserRegister
+  //div.insertBefore(errorMessageRegister, form);
+  div.append(imageR, welcomeMessage, pinEmail2, pinPassword2, form, errorMessageRegister, questionBacklog, buttonBackLogIn, registerSucces);
 
   return div;
 };
