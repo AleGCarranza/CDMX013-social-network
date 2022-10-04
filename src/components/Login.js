@@ -16,6 +16,7 @@ export const Login = () => {
   blueLine.setAttribute('id', 'blueLine');
   const buttonLogin = document.createElement('button');
   buttonLogin.setAttribute('id', 'buttonLogin');
+  //buttonLogin.setAttribute('type', 'submit');
   const buttonGoogle = document.createElement('button');
   buttonGoogle.setAttribute('id', 'buttonGoogle');
   const giM = document.createElement('img');
@@ -25,13 +26,15 @@ export const Login = () => {
   const inputEmail = document.createElement('input');
   inputEmail.setAttribute('id', 'inputEmailLogin');
   inputEmail.setAttribute('placeholder', 'Email');
-  //inputEmail.setAttribute('type ', 'email');
+  inputEmail.setAttribute('type', 'email');
+  inputEmail.setAttribute('required', true);
   const pinEmail = document.createElement('img');
   pinEmail.setAttribute('id', 'pinEmail');
   const inputPass = document.createElement('input');
   inputPass.setAttribute('id', 'passWordLog');
   inputPass.setAttribute('placeholder', 'Password');
   inputPass.setAttribute('type', 'password');
+  inputPass.setAttribute('required', true);
   const pinPassword = document.createElement('img');
   pinPassword.setAttribute('id', 'pinPassword');
   const questionLog = document.createElement('p');
@@ -42,6 +45,8 @@ export const Login = () => {
   pinPassword.src = 'img/padlock1.png';
   buttonLogin.textContent = 'Log in';
   buttonGoogle.textContent = 'Sign in with Google';
+  const form = document.createElement('form');
+  form.append(inputEmail, inputPass);
   giM.src = 'img/google.png';
   buttonSignup.textContent = 'Sign Up';
   questionLog.textContent = 'Don´t have an account?';
@@ -67,6 +72,6 @@ export const Login = () => {
   // onNavigate('/home');
   // });
 
-  div.append(image, blueLine, inputEmail, pinEmail, inputPass, pinPassword, buttonLogin, giM, buttonGoogle, questionLog, buttonSignup);
+  div.append(image, blueLine, pinEmail, pinPassword, form, buttonLogin, giM, buttonGoogle, questionLog, buttonSignup);
   return div;
 };
