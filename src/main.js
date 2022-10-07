@@ -1,7 +1,7 @@
+import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js';
 import { Login } from './components/Login.js';
 import { Register } from './components/Register.js';
 import { Home } from './components/Home.js';
-import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js';
 
 const auth = getAuth();
 
