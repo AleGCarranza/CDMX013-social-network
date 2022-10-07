@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-//import {app} from './config.js';
+
 import {
   getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword,
 }
