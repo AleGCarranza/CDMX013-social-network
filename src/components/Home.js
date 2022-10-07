@@ -1,8 +1,7 @@
-// import { onNavigate } from '../main.js';
-import { getFirestore } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-firestore.js'; // doc, setDoc
+//import { onNavigate } from '../main.js';
 import { logout } from './logout.js';
+import { createPost } from './Post.js';
 
-const db = getFirestore();
 export const Home = () => {
   const div = document.createElement('div');
   const image = document.createElement('img');
@@ -26,15 +25,23 @@ export const Home = () => {
   const buttonLogOut = document.createElement('button');
   buttonLogOut.setAttribute('id', 'userLogOut');
   buttonLogOut.textContent = 'LogOut';
+  buttonSend.addEventListener('click', () => {
+    createPost();
+  });
+  buttonLogOut.addEventListener('click', () => {
+    logout();
+    // onNavigate('/');
+  });
+  div.append(image, buttonSend, inputPost, inputEdit, buttonUpdate, buttonCancel, buttonLogOut);
+  return div;
+};
 
-  buttonSend.addEventListener('click', async (e) => {
-    e.preventDefault();
-
+/* e.preventDefault();
     const description = inputPost['post-description'].value;
     const response = await db.collection('posts').doc().set({
       description,
     });
-    console.log(object);
+    console.log(response);
     console.log(description);
   });
  // Pasos para iniciar la colección (test1 parte 2**) Sale undefined en consola :C
@@ -51,12 +58,11 @@ export const Home = () => {
     console.log(description);
   }); */
 
-  // onNavigate(console.log());
+// onNavigate(console.log());
 
-  buttonLogOut.addEventListener('click', () => {
-    logout();
-    // onNavigate('/');
-  });
-  div.append(image, buttonSend, inputPost, inputEdit, buttonUpdate, buttonCancel, buttonLogOut);
-  return div;
-};
+//* buttonLogOut.addEventListener('click', () => {
+// logout();
+// onNavigate('/');
+// });
+// div.append(image, buttonSend, inputPost, inputEdit, buttonUpdate, buttonCancel, buttonLogOut);
+// return div};

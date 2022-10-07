@@ -49,10 +49,7 @@ export const Register = () => {
       const user = userCredential.user;
       registerSucces.innerHTML = 'Congrats, Welcome to Frontier Advisor';
       console.log('Ya te registraste');
-     /*let temporizador= setTimeout(() => {
-      console.log('this is working'); 
-    },
-      5000);*/
+    
     })
       .catch((error) => {
         const errorCode = error.code;
