@@ -1,6 +1,6 @@
-//import { onNavigate } from '../main.js';
 import { logout } from './logout.js';
-import { createPost } from './Post.js';
+import { newPost, recoveryPost } from '../lib/dataBase.js';
+
 
 export const Home = () => {
   const div = document.createElement('div');
@@ -14,11 +14,12 @@ export const Home = () => {
   buttonCancel.textContent = 'Cancel';
   buttonCancel.setAttribute('id', 'btnCancel');
   const buttonSend = document.createElement('button');
-  buttonSend.textContent = 'Send';
   buttonSend.setAttribute('id', 'btnSend');
-  const inputPost = document.createElement('input');
+  buttonSend.textContent = 'Send';
+  const inputPost = document.createElement('textarea');
   inputPost.setAttribute('id', 'userInputPost');
-  inputPost.setAttribute('placeholder', 'Type your advice here #categorie');
+  inputPost.setAttribute('placeholder', ' Type your advice here #categorie');
+  inputPost.setAttribute('maxlength', '300');
   const inputEdit = document.createElement('input');
   inputEdit.setAttribute('id', 'userInputEdit');
   inputEdit.setAttribute('placeholder', 'You can edit your comment here');
@@ -26,13 +27,17 @@ export const Home = () => {
   buttonLogOut.setAttribute('id', 'userLogOut');
   buttonLogOut.textContent = 'LogOut';
   buttonSend.addEventListener('click', () => {
-    createPost();
+    if (inputPost.value === '') {
+      console.error('Empty');
+    } else { newPost(inputPost.value); }
+    console.log(newPost);
   });
   buttonLogOut.addEventListener('click', () => {
     logout();
     // onNavigate('/');
   });
   div.append(image, buttonSend, inputPost, inputEdit, buttonUpdate, buttonCancel, buttonLogOut);
+  recoveryPost();
   return div;
 };
 

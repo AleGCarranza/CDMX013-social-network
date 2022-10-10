@@ -272,7 +272,11 @@ text-decoration-line: underline;
 }
 
 /* Here start View 3*/
-
+textarea { 
+    width: 300px; 
+    height: 150px;
+}
+    
 #logoHome {
     position: absolute;
     width: 331px;
@@ -281,16 +285,18 @@ text-decoration-line: underline;
     top: 47px;
     }
     #userInputPost{
+    font-family: 'Roboto';
     position: absolute;
     width: 302px;
     height: 87px;
     left: 22px;
     top: 712px;
     background: rgba(62, 138, 162, 0.34);
-    border-radius: 15px;
+    border-radius: 10px;
     color:black
     }
     #btnSend {
+    font-family: 'Roboto';
     position: absolute;
     width: 44px;
     height: 26px;
@@ -308,7 +314,7 @@ text-decoration-line: underline;
     top: 178px;
     border: transparent;
     background: rgba(255, 205, 108, 0.34);
-    border-radius: 15px;
+    border-radius: 10px;
     color:black
     }
     #btnUpdate {
