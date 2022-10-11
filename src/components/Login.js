@@ -8,7 +8,6 @@ import { showLoginError } from './AuthError.js';
 export const auth = getAuth(app);
 
 export const Login = () => {
-  
   const div = document.createElement('div');
   const image = document.createElement('img');
   image.setAttribute('id', 'logo');
@@ -16,7 +15,6 @@ export const Login = () => {
   blueLine.setAttribute('id', 'blueLine');
   const buttonLogin = document.createElement('button');
   buttonLogin.setAttribute('id', 'buttonLogin');
-  //buttonLogin.setAttribute('type', 'submit');
   const buttonGoogle = document.createElement('button');
   buttonGoogle.setAttribute('id', 'buttonGoogle');
   const giM = document.createElement('img');
