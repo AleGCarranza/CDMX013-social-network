@@ -1,7 +1,6 @@
 import { logout } from './logout.js';
 import { newPost, recoveryPost } from '../lib/dataBase.js';
 
-
 export const Home = () => {
   const div = document.createElement('div');
   const image = document.createElement('img');
@@ -20,9 +19,10 @@ export const Home = () => {
   inputPost.setAttribute('id', 'userInputPost');
   inputPost.setAttribute('placeholder', ' Type your advice here #categorie');
   inputPost.setAttribute('maxlength', '300');
-  const inputEdit = document.createElement('input');
+  const containerPosts = document.createElement('div');
+  /*const inputEdit = document.createElement('input');
   inputEdit.setAttribute('id', 'userInputEdit');
-  inputEdit.setAttribute('placeholder', 'You can edit your comment here');
+  inputEdit.setAttribute('placeholder', 'You can edit your comment here');*/
   const buttonLogOut = document.createElement('button');
   buttonLogOut.setAttribute('id', 'userLogOut');
   buttonLogOut.textContent = 'LogOut';
@@ -30,44 +30,23 @@ export const Home = () => {
     if (inputPost.value === '') {
       console.error('Empty');
     } else { newPost(inputPost.value); }
-    console.log(newPost);
   });
   buttonLogOut.addEventListener('click', () => {
     logout();
     // onNavigate('/');
   });
-  div.append(image, buttonSend, inputPost, inputEdit, buttonUpdate, buttonCancel, buttonLogOut);
-  recoveryPost();
+  div.append(image, buttonSend, inputPost, buttonUpdate, buttonCancel, containerPosts, buttonLogOut);
+
+  recoveryPost((querySnapshot) => {
+    containerPosts.innerHTML = '';
+    querySnapshot.forEach((doc) => {
+      const userMessage = doc.data();
+      const textMessage = document.createElement('p');
+      textMessage.textContent = userMessage.message;
+      console.log(userMessage);
+      containerPosts.append(textMessage);
+    });
+  });
+
   return div;
 };
-
-/* e.preventDefault();
-    const description = inputPost['post-description'].value;
-    const response = await db.collection('posts').doc().set({
-      description,
-    });
-    console.log(response);
-    console.log(description);
-  });
- // Pasos para iniciar la colección (test1 parte 2**) Sale undefined en consola :C
-  /* const loadPost = (description) => db.collection('posts').doc().set({
-    description,
-  });
-
-  buttonSend.addEventListener('click', async (e) => {
-    e.preventDefault();
-
-    const description = buttonSend['post-description'].value;
-
-    await loadPost(description);
-    console.log(description);
-  }); */
-
-// onNavigate(console.log());
-
-//* buttonLogOut.addEventListener('click', () => {
-// logout();
-// onNavigate('/');
-// });
-// div.append(image, buttonSend, inputPost, inputEdit, buttonUpdate, buttonCancel, buttonLogOut);
-// return div};
