@@ -326,6 +326,7 @@ textarea {
     background-color:rgba(61, 97, 122, 1);
     font-style: oblique;
     color:rgb(241, 239, 239);
+    z-index:2;
     }
     #btnCancel {
     position: absolute;
@@ -336,6 +337,7 @@ textarea {
     background-color:rgba(61, 97, 122, 1);
     font-style: oblique;
     color:rgb(241, 239, 239);
+    z-index: 2;
     }
 
     #userLogOut{
@@ -350,4 +352,17 @@ textarea {
         background-image: url(img/signOut.png);
     }
 
+    #conPosts {
+   
+    position: absolute;
+    width: 345px;
+    height: 129px;
+    left: 18px;
+    top: 178px;
+    border: transparent;
+    background: rgba(255, 205, 108, 0.34);
+    border-radius: 10px;
+    color:black
+    
+    }
     

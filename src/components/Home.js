@@ -20,6 +20,7 @@ export const Home = () => {
   inputPost.setAttribute('placeholder', ' Type your advice here #categorie');
   inputPost.setAttribute('maxlength', '300');
   const containerPosts = document.createElement('div');
+  containerPosts.setAttribute('id', 'conPosts');
   /*const inputEdit = document.createElement('input');
   inputEdit.setAttribute('id', 'userInputEdit');
   inputEdit.setAttribute('placeholder', 'You can edit your comment here');*/
@@ -41,13 +42,24 @@ export const Home = () => {
   recoveryPost((querySnapshot) => {
     containerPosts.innerHTML = '';
     querySnapshot.forEach((doc) => {
+      const html = `
+      <div class='conPosts'> ${doc.data().message} </div> 
+      
+      `;
+      containerPosts.innerHTML += html;  /*${doc.data().uid}*/
+      console.log(doc.data());
+    });
+  });
+  /*recoveryPost((querySnapshot) => {
+    containerPosts.innerHTML = '';
+    querySnapshot.forEach((doc) => {
       const userMessage = doc.data();
       const textMessage = document.createElement('p');
       textMessage.textContent = userMessage.message;
       console.log(userMessage);
-      containerPosts.append(textMessage);
+    // containerPosts.append(textMessage);
     });
-  });
+  });*/
 
   return div;
 };
