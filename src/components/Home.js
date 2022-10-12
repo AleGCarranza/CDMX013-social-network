@@ -23,8 +23,9 @@ export const Home = () => {
   /*const inputEdit = document.createElement('input');
   inputEdit.setAttribute('id', 'userInputEdit');
   inputEdit.setAttribute('placeholder', 'You can edit your comment here');*/
-  const buttonLogOut = document.createElement('button');
+  const buttonLogOut = document.createElement('img');
   buttonLogOut.setAttribute('id', 'userLogOut');
+  buttonLogOut.src = 'img/signOut.png';
   buttonLogOut.textContent = 'LogOut';
   buttonSend.addEventListener('click', () => {
     if (inputPost.value === '') {

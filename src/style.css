@@ -340,8 +340,14 @@ textarea {
 
     #userLogOut{
         position: absolute;
-        width: 72px;
-        height: 21.64px;
-        left: 294px;
+        width: 25px;
+        height:25px;
+        left:340px;
+        /*width: 72px;
+        height: 21.64px;*/
+        /*left: 294px;*/
         top: 15px;
+        background-image: url(img/signOut.png);
     }
+
+    
