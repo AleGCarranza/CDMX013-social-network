@@ -1,5 +1,5 @@
 import {
-  getFirestore, addDoc, collection, onSnapshot,
+  getFirestore, addDoc, collection, onSnapshot, doc, deleteDoc
 } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-firestore.js';
 import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js';
 import { app } from './config.js';
@@ -26,4 +26,7 @@ export const newPost = async (postMessage) => {
 };
 export const recoveryPost = (callback) => {
   onSnapshot(collection(db, 'post'), callback);
+};
+export const deletePost = async (idMessage) => {
+  await deleteDoc(doc(db, 'post', idMessage));
 };
