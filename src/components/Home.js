@@ -1,8 +1,9 @@
 import { logout } from './logout.js';
-import { newPost, recoveryPost } from '../lib/dataBase.js';
+import { deletePost, newPost, recoveryPost } from '../lib/dataBase.js';
 
 export const Home = () => {
   const div = document.createElement('div');
+  div.setAttribute('id', 'principalDiv');
   const image = document.createElement('img');
   image.setAttribute('id', 'logoHome');
   image.src = 'img/logoHomeText.png';
@@ -20,7 +21,10 @@ export const Home = () => {
   inputPost.setAttribute('placeholder', ' Type your advice here #categorie');
   inputPost.setAttribute('maxlength', '300');
   const containerPosts = document.createElement('div');
-  containerPosts.setAttribute('id', 'conPosts');
+  containerPosts.setAttribute('id', 'flex-container');
+  
+  //const singleMessage = document.createElement('div');
+  //singleMessage.setAttribute('id', 'sinMessage');
   /*const inputEdit = document.createElement('input');
   inputEdit.setAttribute('id', 'userInputEdit');
   inputEdit.setAttribute('placeholder', 'You can edit your comment here');*/
@@ -43,11 +47,17 @@ export const Home = () => {
     containerPosts.innerHTML = '';
     querySnapshot.forEach((doc) => {
       const html = `
-      <div class='conPosts'> ${doc.data().message} </div> 
-      
+      <p id='sinMessage'>${doc.data().message} </p>
       `;
       containerPosts.innerHTML += html;  /*${doc.data().uid}*/
       console.log(doc.data());
+      const btnDelete = document.createElement('button');
+      btnDelete.textContent = 'Delete';
+      btnDelete.classList = 'btnDelete';
+      btnDelete.addEventListener('click', async () => {
+        await deletePost(doc.id);
+      });
+      containerPosts.append(btnDelete);
     });
   });
   /*recoveryPost((querySnapshot) => {
