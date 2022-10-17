@@ -21,7 +21,7 @@ export const Home = () => {
   inputPost.setAttribute('placeholder', ' Type your advice here #categorie');
   inputPost.setAttribute('maxlength', '300');
   const containerPosts = document.createElement('div');
-  containerPosts.setAttribute('id', 'flex-container');
+  //containerPosts.setAttribute('id', 'flex-container');
   //const singleMessage = document.createElement('div');
   //singleMessage.setAttribute('id', 'sinMessage');
   /*const inputEdit = document.createElement('input');
@@ -58,7 +58,6 @@ export const Home = () => {
       const btnDelete = document.createElement('img');
       btnDelete.setAttribute('id', 'btnDelete');
       btnDelete.src = 'img/trashCan1.png';
-      btnDelete.textContent = 'Delete';
       btnDelete.classList = 'btnDelete';
       btnDelete.addEventListener('click', async () => {
         await deletePost(doc.id);

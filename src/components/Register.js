@@ -49,13 +49,12 @@ export const Register = () => {
       const user = userCredential.user;
       registerSucces.innerHTML = 'Congrats, Welcome to Frontier Advisor';
       console.log('Ya te registraste');
-    
     })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log(errorMessage);
-       // errorMessageRegister.innerHTML = 'You already have an account .Back to the login';
+        // errorMessageRegister.innerHTML = 'You already have an account .Back to the login';
       });
   });
 
