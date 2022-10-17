@@ -1,5 +1,5 @@
 import { logout } from './logout.js';
-import { deletePost, newPost, recoveryPost } from '../lib/dataBase.js';
+import { deletePost, newPost, recoveryPost } from '../lib/dataBase.js'; //editPost
 
 export const Home = () => {
   const div = document.createElement('div');
@@ -22,7 +22,6 @@ export const Home = () => {
   inputPost.setAttribute('maxlength', '300');
   const containerPosts = document.createElement('div');
   containerPosts.setAttribute('id', 'flex-container');
-  
   //const singleMessage = document.createElement('div');
   //singleMessage.setAttribute('id', 'sinMessage');
   /*const inputEdit = document.createElement('input');
@@ -36,6 +35,7 @@ export const Home = () => {
     if (inputPost.value === '') {
       console.error('Empty');
     } else { newPost(inputPost.value); }
+    inputPost.value = '';
   });
   buttonLogOut.addEventListener('click', () => {
     logout();
@@ -46,30 +46,26 @@ export const Home = () => {
   recoveryPost((querySnapshot) => {
     containerPosts.innerHTML = '';
     querySnapshot.forEach((doc) => {
-      const html = `
-      <p id='sinMessage'>${doc.data().message} </p>
-      `;
-      containerPosts.innerHTML += html;  /*${doc.data().uid}*/
-      console.log(doc.data());
-      const btnDelete = document.createElement('button');
+      const post = doc.data();
+      const containPost = document.createElement('p');
+
+      containPost.textContent = post.message;
+      containerPosts.classList = 'containPost';
+      containPost.classList = 'boxcontain';
+      post.classList = 'post';
+      console.log(post);
+
+      const btnDelete = document.createElement('img');
+      btnDelete.setAttribute('id', 'btnDelete');
+      btnDelete.src = 'img/trashCan1.png';
       btnDelete.textContent = 'Delete';
       btnDelete.classList = 'btnDelete';
       btnDelete.addEventListener('click', async () => {
         await deletePost(doc.id);
       });
-      containerPosts.append(btnDelete);
+      containerPosts.append(containPost, btnDelete);
     });
   });
-  /*recoveryPost((querySnapshot) => {
-    containerPosts.innerHTML = '';
-    querySnapshot.forEach((doc) => {
-      const userMessage = doc.data();
-      const textMessage = document.createElement('p');
-      textMessage.textContent = userMessage.message;
-      console.log(userMessage);
-    // containerPosts.append(textMessage);
-    });
-  });*/
 
   return div;
 };
