@@ -1,6 +1,6 @@
 import {
-  getFirestore, addDoc, collection, onSnapshot, doc, deleteDoc,
-} from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-firestore.js'; //updateDoc
+  getFirestore, addDoc, collection, onSnapshot, doc, deleteDoc, updateDoc,
+} from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-firestore.js';
 import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js';
 import { app } from './config.js';
 
@@ -30,6 +30,6 @@ export const recoveryPost = (callback) => {
 export const deletePost = async (idMessage) => {
   await deleteDoc(doc(db, 'post', idMessage));
 };
-/*export const editPost = async (idMessage) => {
+export const editPost = async (idMessage) => {
   await updateDoc(doc(db, 'post', idMessage));
-};*/
+};
