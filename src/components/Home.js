@@ -72,9 +72,9 @@ export const Home = () => {
         containerPrincipal.append(inputtext);
         buttonSave.textContent = 'Upgrade';
         buttonSave.setAttribute('id', 'btnSave');
-        buttonSave.addEventListener('click', e, async () => {
-          editPost(doc.id, { message: containPost.value });
+        buttonSave.addEventListener('click', async () => {
           e.stopImmediatePropagation();
+          editPost(doc.id, { message: containPost.value });
         });
         div.append(buttonSave);
       });
