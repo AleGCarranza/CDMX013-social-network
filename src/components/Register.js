@@ -34,8 +34,6 @@ export const Register = () => {
   registerSucces.setAttribute('class', 'congrats');
   const form = document.createElement('form');
   form.append(inputEmail, inputPass, accountButton);
-  //  const inputUserRegister = document.createElement('input');
-  //  inputUserRegister.setAttribute('id', 'registerusername');
   imageR.src = 'img/logo.png';
   welcomeMessage.src = 'img/view2map.png';
   pinEmail2.src = 'img/mail.png';
