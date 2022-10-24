@@ -33,3 +33,7 @@ export const deletePost = async (idMessage) => {
 export const editPost = async (idMessage) => {
   await updateDoc(doc(db, 'post', idMessage));
 };
+export const updateFunction = async (idMessage, newText) => {
+  const post = (doc(db, 'post', idMessage));
+  await updateDoc(post, newText);
+};

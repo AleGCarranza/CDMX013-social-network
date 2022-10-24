@@ -1,4 +1,4 @@
-import { deletePost, editPost } from '../lib/dataBase.js';
+import { deletePost, editPost, updateFunction } from '../lib/dataBase.js';
 
 export const POST = (querySnapshot) => {
   const containerPosts = document.createElement('div');
@@ -41,6 +41,10 @@ export const POST = (querySnapshot) => {
       buttonSave.addEventListener('click', e, async () => {
         editPost(doc.id, { message: containPost.value });
         e.stopImmediatePropagation();
+      });
+      buttonSave.addEventListener('click', async () => {
+        updateFunction(doc.id, { message: inputtext.value });
+        window.alert('Already Save');
       });
       containerPosts.append(buttonSave);
     });
