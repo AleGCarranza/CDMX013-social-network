@@ -1,6 +1,6 @@
-import { logout } from './logout.js';
+import { Logout } from './Logout.js';
 import { newPost, recoveryPost } from '../lib/dataBase.js';
-import { POST } from './POST.js';
+import { Post } from './Post.js';
 
 export const Home = () => {
   const div = document.createElement('div');
@@ -29,14 +29,14 @@ export const Home = () => {
     inputPost.value = '';
   });
   buttonLogOut.addEventListener('click', () => {
-    logout();
+    Logout();
   });
   div.append(image, buttonSend, inputPost, buttonLogOut);
 
   const containerPosts = document.createElement('div');
   recoveryPost((querySnapshot) => {
     containerPosts.innerHTML = '';
-    containerPosts.appendChild(POST(querySnapshot));
+    containerPosts.appendChild(Post(querySnapshot));
   });
 
   div.append(image, buttonSend, inputPost, containerPosts, buttonLogOut);

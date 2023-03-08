@@ -4,7 +4,7 @@ import { app } from '../lib/config.js';
 
 const auth = getAuth(app);
 
-export const logout = () => {
+export const Logout = () => {
   signOut(auth).then(() => {
     onNavigate('/');
   });

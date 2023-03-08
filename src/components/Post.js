@@ -1,6 +1,6 @@
 import { deletePost, editPost, updateFunction } from '../lib/dataBase.js';
 
-export const POST = (querySnapshot) => {
+export const Post = (querySnapshot) => {
   const containerPosts = document.createElement('div');
   querySnapshot.forEach((doc) => {
     const btnEdit = document.createElement('img');
