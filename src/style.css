@@ -154,7 +154,6 @@ text-decoration-line: underline;
 }
 
 /*view 2*/
-/*view 2*/
 
 #logo2 {
     position: absolute;
@@ -316,19 +315,7 @@ textarea {
     border-radius: 10px;
     color:black
     }
-    /*#btnEdit {
     
-        position: relative;
-        width: 60px;
-        height:20px;
-        left: 75px;
-        top: -393px;
-        border-radius: 11px;
-    background-color:rgba(61, 97, 122, 1);
-    font-style: oblique;
-    color:rgb(241, 239, 239);
-    z-index:2;
-    }*/
     #btnSave {
     text-align: center;
     font-style: normal;
@@ -390,7 +377,6 @@ textarea {
      height: 100%;
      margin-top:120px;
      justify-content:space-between;
- 
     }
  /*es cada párrafo*/
     .boxcontain{
@@ -403,9 +389,12 @@ textarea {
     padding: 5%;
   
     }
+  
 
     #btnEdit {
-   
+    position: relative;
     width: 28.21px;
     height: 22.92px;
+  
     }
+  
